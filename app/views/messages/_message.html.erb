@@ -1,0 +1,5 @@
+<% @messages.each do |message| %>
+
+  <p><strong><%= message.user.username %>:</strong> <%= message.body %></p>
+
+<% end %>
