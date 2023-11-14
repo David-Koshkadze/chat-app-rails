@@ -7,10 +7,10 @@
       <%= render @messages %>
     </div>
 
-    <div class="px-8 flex gap-4">
-      <input type="text" class="w-full"/>   
-      <button class=" bg-emerald-600 rounded-md px-3 py-2">Send</button>
-    </div>
+    <%= form_for(@message, url: message_path, html: { class: "px-8 pb-2 flex gap-4" }) do |f| %> 
+      <%= f.text_field :body, class: "w-full" %>
+      <button class="bg-emerald-600 rounded-md px-3 py-2">Send</button>
+    <% end %>
   </div>
 
   <div class="bg-green-200 col-span-1 ">
