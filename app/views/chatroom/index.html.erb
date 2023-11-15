@@ -1,16 +1,18 @@
 <h1 class="text-lg my-4 text-center">Welcome to the chat</h1>
 
 <div class="w-full lg:w-3/4 mx-auto grid grid-cols-4 gap-4 h-[600px]">
-  <div class="col-span-3 border-2 flex flex-col justify-between">
+  <div class="col-span-3 border-2 flex flex-col justify-between overflow-auto relative" id="message_wrapper">
     <% # Users %>
     <div class="px-4 py-4" id="message_container">
       <%= render @messages %>
     </div>
 
-    <%= form_for(@message, url: message_path, remote: true, html: { class: "px-8 pb-2 flex gap-4" }) do |f| %> 
-      <%= f.text_field :body, class: "w-full", id: "message_body" %>
-      <button class="bg-emerald-600 rounded-md px-3 py-2">Send</button>
-    <% end %>
+    <div class="w-full sticky bottom-[-1px] bg-white">
+      <%= form_for(@message, url: message_path, remote: true, html: { class: "px-8 pb-2 flex gap-4" }) do |f| %> 
+        <%= f.text_field :body, class: "w-full", id: "message_body" %>
+        <button class="bg-emerald-600 rounded-md px-3 py-2">Send</button>
+      <% end %>
+    </div>
   </div>
 
   <div class="bg-green-200 col-span-1 ">

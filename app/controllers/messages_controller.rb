@@ -4,11 +4,16 @@ class MessagesController < ApplicationController
   def create
     message = current_user.messages.build(message_params)
     if message.save
-      ActionCable.server.broadcast "chatroom_channel", { html_message: render_message(message) }
+      broadcast_message(message)
+      # render turbo_stream: turbo_stream.append(:messages, message)
     end
   end
 
   private
+
+  def broadcast_message(message)
+    ActionCable.server.broadcast "chatroom_channel", { html_message: render_message(message) }
+  end
 
   def message_params
     params.require(:message).permit(:body)
