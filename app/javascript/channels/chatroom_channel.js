@@ -20,6 +20,8 @@ consumer.subscriptions.create("ChatroomChannel", {
 
     messagesContainer.innerHTML += data.html_message;
 
+    // this is for all users
+    // but this should be for only one user...
     document.querySelector("#message_body").value = "";
 
     console.log(messagesContainer.offsetTop);

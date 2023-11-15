@@ -4,3 +4,17 @@ import "controllers";
 
 import "flowbite";
 import "./channels/index";
+
+// when windows load
+
+const messagesWrapper = document.querySelector("#message_wrapper");
+
+function scrollToBottom(element) {
+  element.scroll({
+    top: element.scrollHeight,
+    left: 0,
+    behavior: "smooth",
+  });
+}
+
+window.onload(scrollToBottom(messagesWrapper));
