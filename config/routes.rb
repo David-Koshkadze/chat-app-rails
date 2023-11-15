@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'messages/create'
+  # get 'messages/create'
 
   root "chatroom#index"
 
@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   post "message", to: "messages#create"
 
-  mount ActionCable.server, at: '/cable'
+  mount ActionCable.server, at: "/cable"
 end

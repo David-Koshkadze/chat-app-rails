@@ -70,4 +70,7 @@ Rails.application.configure do
 
   
   config.assets.debug = true
+
+  # Added this for precompiling assets
+  config.assets.compile = true
 end

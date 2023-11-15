@@ -2,4 +2,5 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-import 'flowbite';import "./channels"
+import 'flowbite';
+import "./channels/index"
