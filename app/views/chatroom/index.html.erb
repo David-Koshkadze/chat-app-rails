@@ -8,7 +8,7 @@
     </div>
 
     <div class="w-full sticky bottom-[-1px] bg-white">
-      <%= form_for(@message, url: message_path, remote: true, html: { class: "px-8 pb-2 flex gap-4" }) do |f| %> 
+      <%= form_for(@message, url: message_path, remote: true, html: { class: "px-8 pb-2 flex gap-4" }) do |f| %>
         <%= f.text_field :body, class: "w-full", id: "message_body" %>
         <button class="bg-emerald-600 rounded-md px-3 py-2">Send</button>
       <% end %>
@@ -16,7 +16,6 @@
   </div>
 
   <div class="bg-green-200 col-span-1 ">
-    <p>Friends List</p>
     <p>Friends List</p>
     <p>Friends List</p>
     <p>Friends List</p>

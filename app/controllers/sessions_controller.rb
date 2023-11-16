@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash.now[:error] = "There are errors to login"
-      render "new", status: 422
+      render "new", status: :unprocessable_entity
     end
   end
 
